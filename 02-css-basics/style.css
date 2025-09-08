@@ -26,6 +26,23 @@ body {
     border: solid 10px var(--border);
 
 }
+
+.foots{
+    width: 100%;
+    margin-right: 13.5%;
+    background: linear-gradient(in oklab, var(--text), var(--highlight));
+    background-color: var(--border);
+    display: flex;
+    position: fixed; 
+    bottom: 0; 
+    justify-content: center;
+    z-index: 10;
+}
+
+.foots a{
+    color: white;
+}
+
 .main-content{
     margin-left: 23.5%;
     
@@ -33,6 +50,7 @@ body {
 
 .summary{
     margin-right: 13.5%;
+
 }
 
 .summary a:hover{
@@ -47,6 +65,10 @@ body {
     outline:solid 10px var(--border);
     justify-content: center;
     position:fixed;
+}
+
+.sidebar ul{
+    list-style: None;
 }
 
 nav{
@@ -90,7 +112,6 @@ h1 {
 
 .card{
     background-color: var(--accent);
-    border-radius: 10%;
     border: solid var(--border) 10px;
     padding: 10px;
     width: fit-content;
@@ -122,3 +143,10 @@ iframe.tsi{
     border-image: url("images/border_space.jpg") 30 round;
 }
 
+iframe.tsi:hover{
+    box-shadow: 0 0 50px var(--accent);
+}
+
+.soccer{
+    margin-right: 25%;
+}
