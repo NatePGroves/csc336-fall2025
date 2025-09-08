@@ -13,46 +13,112 @@ body {
     background-color: var(--background-color);
     color: var(--text);
     font-size: 1.2em;
-
-}
-
-nav.main-page {
-    width: 50%;
-    background-color: var(--accent);
-    border: 10px solid var(--border);
-    padding: 0 10%;
-    margin-left: 25%;
-    margin-right: 25%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
     
 }
-nav a {
-    font-size: 20%;
+.headings{
     text-align: center;
-    display: flex;
-    margin: 0px 4%;
-    color: var(--text);
-    word-wrap:break-word;
-    white-space: nowrap;
+    margin-right: 13.5%;
+    position: sticky;
+    top: 0px;
+    background: linear-gradient(in oklab, var(--accent), var(--highlight));
+    background-color: var(--accent);
+    height: 5%;
+    border: solid 10px var(--border);
 
 }
-nav a:hover{
-    color: var(--highlight)
-}
-
-h1 {font-family:Georgia, serif;}
-
 .main-content{
-    margin-left: 10px;
+    margin-left: 23.5%;
+    
+}
+
+.summary{
+    margin-right: 13.5%;
+}
+
+.summary a:hover{
+    color: var(--highlight);
 }
 
 .sidebar{
     display: flex;
-    width: 20%;
+    width: 10%;
     height: 100%;
     background-color: var(--accent);
+    outline:solid 10px var(--border);
+    justify-content: center;
+    position:fixed;
+}
+
+nav{
+    background-color: var(--accent);
     border: 10px solid var(--border);
+    padding: 0 10%;
+    margin-right: 13.5%;
+    display:flexbox;
+    
+}
+
+nav ul {
+    list-style: none;
+    justify-content: center;
+    align-items: center;
 
 }
+
+nav ul li{
+    display: inline-block;
+}
+
+nav ul li a{
+    margin: 0px 4%;
+    padding: 10px;
+    text-overflow: ellipsis;
+    color: var(--text);
+    word-wrap:break-word;
+    white-space: nowrap;
+    display: inline-flex;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color: var(--highlight)
+}
+
+h1 {
+    font-family:Georgia, serif;
+}
+
+.card{
+    background-color: var(--accent);
+    border-radius: 10%;
+    border: solid var(--border) 10px;
+    padding: 10px;
+    width: fit-content;
+    margin-right: 13.5%;
+    text-overflow: clip;
+    display: flex;          
+    align-items: center;
+    justify-content: center;    
+}
+
+.card:hover{
+    box-shadow: 0 0 50px var(--accent);
+}
+
+.card.tsi{
+    border-image: url("images/border_space.jpg") 30 round;
+    border-radius: 0%;
+    
+}
+
+.card p{
+    display: inline;
+    text-decoration: none;
+}
+
+iframe.tsi{
+    margin-right: 13.5%;
+    border: 10px solid transparent;
+    border-image: url("images/border_space.jpg") 30 round;
+}
+
