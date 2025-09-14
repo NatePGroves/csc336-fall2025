@@ -6,7 +6,7 @@
     <script src="script.js"></script>
 </head>
 
-<body class="background-neutral">
+<body class="background-neutral" onload = "loadQuestion()">
     <svg id="menu-button" onclick="showMenu()">
         <rect y="10" width="100%" height="5"></rect>
         <rect y="25" width="100%" height="5"></rect>
@@ -25,7 +25,7 @@
             Welcome to the game!
         </h1>
         <div id="question-space">
-            <div class="question">Questions</div>
+            <div id="question-card" class = "question">Questions</div>
         </div>
         <div id="answer-space">
             <div class="answer">Answer 1</div>

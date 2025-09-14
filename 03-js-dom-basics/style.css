@@ -129,6 +129,7 @@ a:hover{
     text-align: center;
     padding: 10px;
     cursor: pointer;
+    font-size: 2em;
 }
 
 .correct{
@@ -148,6 +149,7 @@ a:hover{
     height: auto;
     text-align: center;
     padding: 10px;
+    font-size: 3em;
 
 }
 
