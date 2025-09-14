@@ -1,0 +1,169 @@
+
+:root { /* Asked ChatGPT for a quiz show color palette and best fonts*/
+    --background-color: #2E294E;
+    --text: #F0F0F0;
+    --accent: #FFD700;
+    --primary: #0047AB;
+    --secondary: #E63946;
+    --highlight: #3CE85E;
+    --font-heading: 'Franklin Gothic Medium', 'Arial Black', Arial, sans-serif;
+    --font-body: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+*, html {
+    margin:0;
+    padding:0;  
+}
+body {
+    color: var(--text);
+    font-family: var(--font-heading);
+}
+
+h1, h2, h3{
+    font-family: var(--font-heading);
+    background-color: var(--primary);
+    text-align: center;
+    padding: 10px;
+}
+
+.background-neutral{
+    background-color: var(--background-color);
+}
+
+#main-page.oof{
+    filter: blur(5px); 
+    pointer-events: none;
+    user-select: none; 
+}
+
+
+#menu{
+    opacity: 0;
+    background-color: var(--primary);
+    border: 3px solid var(--accent);
+    position: fixed;
+    top: 25vh;
+    left: 25vw;
+    z-index: 1000;
+    width: 50vw;
+    height: 50vh;
+    transition: opacity 0.4s ease-in;
+    
+    display: flex;
+    flex-direction: column;       
+     
+    align-items: center;  
+}
+
+#menu h1{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--accent); 
+    z-index: 999;                
+    opacity: 0;               
+}
+
+
+#overlay.show{
+    opacity: 0.5;
+    z-index: 998;
+}
+
+#menu.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+a { 
+    color: var(--text);
+    text-decoration: none;
+    margin-bottom: 50 px;
+    font-size: 5em;
+}
+
+a:hover{
+    color: var(--highlight);
+}
+
+#menu-button{
+    position: fixed;
+    z-index: 999;
+    top: 0px;
+    right: 20px;
+    cursor: pointer;
+    width: 4vw; 
+    height: 4vw;
+    fill: var(--accent);
+}
+
+
+.clickable-text{
+    cursor: pointer;
+}
+
+.clickable-text:hover{
+    color: var(--highlight);
+}
+
+.off{
+    pointer-events: none;
+
+}
+
+.on{
+    pointer-events: auto;
+}
+
+.answer{
+    background-color: var(--primary);
+    border: 3px solid var(--accent);
+    width: 20%;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.correct{
+    background-color: var(--highlight);
+}
+
+.incorrect{
+    background-color: var(--secondary);
+}
+
+.question{
+    background-color: var(--primary);
+    border: 3px solid var(--accent);
+    background-color: var(--primary);
+    border: 3px solid var(--accent);
+    width: 50%;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+
+}
+
+.answer:hover{
+    box-shadow: 0px 0px 10px 1px var(--accent);
+}
+
+
+#question-space{
+    display: flex;
+    justify-content: center;
+    padding: 10%;
+}
+
+#answer-space{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+}

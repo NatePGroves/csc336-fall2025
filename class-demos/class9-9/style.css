@@ -1,0 +1,28 @@
+.demo-box{
+    background-color: pink;
+    border:ridge 10px black;
+    margin: 15px;
+    border-radius: 15px;
+    padding: 50px;
+    text-align: center;
+    height: 50%;
+}
+
+.demo-box:hover{
+    opacity: 50;
+}
+
+.box-demo{
+    background-color: pink;
+    border:ridge 10px black;
+    margin: 15px;
+    border-radius: 15px;
+    padding: 50px;
+    text-align: center;
+    height: 50%;
+    opacity: 50;
+}
+
+.box-demo:hover{
+    opacity: 100;
+}
