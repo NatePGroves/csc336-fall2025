@@ -41,28 +41,34 @@ function closeMenu() {
 }
 
 function incorrectAnswer() {
-    alert("incorrect");
+    let incorrectPopUp = document.createElement("img");
+    incorrectPopUp.src = "images/incorrect.png"
+    incorrectPopUp.classList.add("pop-up");
+    document.body.appendChild(incorrectPopUp);
+    setTimeout(() => { incorrectPopUp.remove(); }, 2000); //Don't really understand this, but its from https://www.sitepoint.com/delay-sleep-pause-wait/
     revealCorrect();
 }
 
 function correctAnswer() {
-    alert("correct");
+    let correctPopUp = document.createElement("img");
+    correctPopUp.src = "images/correct.png"
+    correctPopUp.classList.add("pop-up");
+    document.body.appendChild(correctPopUp);
+    setTimeout(() => { correctPopUp.remove(); }, 2000); //Don't really understand this, but its from https://www.sitepoint.com/delay-sleep-pause-wait/
     revealCorrect();    
     loadQuestion();
 }
 
 function chooseQuestion() {
-    if (quizQuestions.length === 0) {
-        alert("You Win!");
-        return null;
-    }
+    
     const randomIndex = Math.floor(Math.random() * quizQuestions.length);
     return quizQuestions.splice(randomIndex, 1) [0];// This line is from ChatGPT but I'm learning JS from it
 }
 
 function loadQuestion() {
     if (quizQuestions.length === 0) {
-        alert("You Win!");
+        setTimeout(() => {winner()
+        }, 2000);
         return null;
     }
     document.getElementById("answer-space").innerHTML = ""
@@ -91,4 +97,18 @@ function revealCorrect(){
             choice.classList.add("incorrect")
         } 
     }
+}
+
+function winner(){
+    let winningPopUp = document.createElement("img");
+    let rotation = 0
+    winningPopUp.src = "images/winning.png"
+    winningPopUp.classList.add("pop-up");
+    document.body.appendChild(winningPopUp);
+    setTimeout(() => { alert("Click Here to Restart:");
+        window.location.reload(true);
+     }, 2000); //Don't really understand this, but its from https://www.sitepoint.com/delay-sleep-pause-wait/ 
+                // Okay after experimenting it seems like it is performing an async function where what happens inside the time out happens after the wait 
+                // but whats after will not wait for the timeout
+    
 }

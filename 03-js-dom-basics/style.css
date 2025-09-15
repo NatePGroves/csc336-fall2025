@@ -130,6 +130,7 @@ a:hover{
     padding: 10px;
     cursor: pointer;
     font-size: 2em;
+    border-radius: 15px;
 }
 
 .correct{
@@ -150,6 +151,7 @@ a:hover{
     text-align: center;
     padding: 10px;
     font-size: 3em;
+    
 
 }
 
@@ -168,4 +170,31 @@ a:hover{
     display: flex;
     flex-direction: row;
     justify-content: space-around; 
+}
+
+.pop-up{
+    position: fixed;
+    z-index: 1000;
+    top: 0px;
+    right: 20px;
+    width: 100vw;
+    height: 100vh;
+    fill: var(--accent);
+}
+
+#rule-explanation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rules-text{
+    font-size: 5em;
+    padding: 20px;
+    text-align: center;
+}
+
+#rules-link{
+    font-size: 1em;
 }
