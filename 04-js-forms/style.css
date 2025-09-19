@@ -39,7 +39,7 @@ p label {
     font-family: var(--font-body);
 }
 
-#top-line{
+.top-line{
     
     text-align: center;
     padding: 10px;
@@ -81,7 +81,7 @@ p label {
     border: 5px dashed var(--muted) inset;
 }
 
-#list-area{
+.list-area{
     padding: 4%;
     gap:4%;
     display: flex;
@@ -95,12 +95,12 @@ p label {
     width: 100%;
 }
 
-#point-form-area{
+.point-form-area{
     display: flex;
     justify-content: center;
 }
 
-#line-form-area{
+.line-form-area{
     display: flex;
     justify-content: center;
 }

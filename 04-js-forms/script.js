@@ -11,17 +11,18 @@ let points = [
 let lines = []
 
 function populateLineForm() {
-    let lineForm = document.querySelector("#line-form")
+    let lineForm = document.querySelector(".line-form")
     if (points.length > 2) { //2 points + example
         lineForm.innerHTML = `<label for="point-1">Choose point 1 for the new line:</label>
-                                 <select id="point-1" class = "selector">
+                                 <select class="point-1" class = "selector">
                                 </select>
                                 <label for="point-2">Choose point 2 for the new line:</label>
-                                 <select id="point-2" class = "selector">
+                                 <select class="point-2" class = "selector">
                                 </select>
-                                <button type="submit" id = "add-point">Add Line</button>`
-        let drop1 = document.querySelector("#point-1")
-        let drop2 = document.querySelector("#point-2")
+                                <button type="submit" class = "add-point">Add Line</button>
+                                <button type="reset">Delete all lines</button>`
+        let drop1 = document.querySelector(".point-1")
+        let drop2 = document.querySelector(".point-2")
         for (let point of points) {
             if (point.label === "example") {
                 continue;
@@ -36,8 +37,8 @@ function populateLineForm() {
 }
 
 function populateListAndPlot() {
-    let listDiv = document.querySelector("#list-area");
-    let graphSVG = document.querySelector("#graph");
+    let listDiv = document.querySelector(".list-area");
+    let graphSVG = document.querySelector(".graph");
 
     listDiv.innerHTML = "";
     graphSVG.innerHTML = "";
@@ -117,8 +118,8 @@ function addLine(e) {
 
     e.preventDefault();
 
-    let p1 = document.querySelector("#point-1").value;
-    let p2 = document.querySelector("#point-2").value;
+    let p1 = document.querySelector(".point-1").value;
+    let p2 = document.querySelector(".point-2").value;
 
     if (p1 == p2) {
         alert("The endpoints must be different");
@@ -132,7 +133,7 @@ function addLine(e) {
     let p2Y = 0;
     let p2ID = "";
 
-    let graphSVG = document.querySelector("#graph");
+    let graphSVG = document.querySelector(".graph");
 
     for (let point of points) {
         if (point.label == p1) {
@@ -192,11 +193,50 @@ function deleteLine(p1, p2) {
     populateListAndPlot();
 }
 
-let pointForm = document.querySelector("#point-form");
-pointForm.addEventListener("submit", addPoint);
+function deleteAllPoints(e) {
+    e.preventDefault();
+    if (points.length == 1){
+        alert("No points to delete!")
+        return false
+    }
+    if (confirm("Do you want to delete all the points?")) {
+        points = [
+            {
+                label: "example",
+                xPos: 50,
+                yPos: 50,
+                color: "Red",
+                radius: 10
+            }
+        ]
+    populateListAndPlot()
 
-let lineForm = document.querySelector("#line-form");
+    }else{
+        return false
+    }
+}
+
+function deleteAllLines(e) {
+    e.preventDefault();
+    if (lines.length == 0){
+        alert("No lines to delete!")
+        return false
+    }
+    if (confirm("Do you want to delete all the lines?")) {
+        lines = []
+    populateListAndPlot()
+    }else{
+        return false
+    }
+}
+
+let pointForm = document.querySelector(".point-form");
+pointForm.addEventListener("submit", addPoint);
+pointForm.addEventListener("reset", deleteAllPoints)
+
+let lineForm = document.querySelector(".line-form");
 lineForm.addEventListener("submit", addLine)
+lineForm.addEventListener("reset", deleteAllLines)
 
 // This function call draws the initial array of animals.
 populateListAndPlot();

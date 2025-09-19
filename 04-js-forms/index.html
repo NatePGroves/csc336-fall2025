@@ -7,12 +7,12 @@
 </head>
 
 <body>
-    <div id="top-line">
+    <div class="top-line">
         <h1>Welcome to the line art maker!</h1>
     </div>
     <div class="border"></div>
-    <div id="point-form-area">
-    <form id="point-form">
+    <div class="point-form-area">
+    <form class="point-form">
         <label for="label-field">Label:</label>
         <input id = "label-field" type="text" maxlength="15" minlength="1" required>
 
@@ -28,22 +28,24 @@
         <label for="color">Color:</label>
         <input id="color" type="color"></input>
 
-        <button type="submit" id = "add-point">Add Point</button>
+        <button type="submit" class = "add-point">Add Point</button>
+
+        <button type="reset" class = "delete points">Delete all points</button>
     </form>
     </div>
     <br>
     <div class="border"></div>
     <br>
-    <div id = "line-form-area">
-    <form id="line-form">
+    <div class = "line-form-area">
+    <form class="line-form">
         <label for="label-field">Label:</label>
-        <input id = "label-field" type="text" maxlength="15" minlength="1" required>
+        <input class = "label-field" type="text" maxlength="15" minlength="1" required>
     </form>
     </div>
     <br> 
     <div class = "border"></div>
     <p style="text-align: center;">Click on a card to delete that point or line.</p>
-    <div id="list-area"> 
+    <div class="list-area"> 
         <div class="point-card">
             <p>Label: Example</p>
             <p>X: 50, Y: 50</p>
@@ -53,8 +55,8 @@
     </div>
     <br>
     <div class="border"></div>
-    <div id="graph-area">
-        <svg id = "graph" width="100%" height="100%">
+    <div class="graph-area">
+        <svg class = "graph" width="100%" height="100%">
             <circle id="#example" cx="50%" cy="50%" r="10" fill="red" />
         </svg>
     </div>
