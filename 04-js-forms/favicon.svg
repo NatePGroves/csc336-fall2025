@@ -1,0 +1,25 @@
+<!-- Made with my site and then formatted with chatgpt -->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Right circles -->
+  <circle cx="704" cy="256" r="200" fill="#000000"/>
+  <circle cx="704" cy="256" r="150" fill="#ffffff"/>
+  <circle cx="704" cy="256" r="100" fill="#1f13ff"/>
+
+  <!-- Left circles -->
+  <circle cx="320" cy="256" r="200" fill="#000000"/>
+  <circle cx="320" cy="256" r="150" fill="#ffffff"/>
+  <circle cx="320" cy="256" r="100" fill="#010dff"/>
+
+  <!-- Path strokes -->
+  <path d="M406 427.5 L487.2 513" stroke="black" stroke-width="8"/>
+  <path d="M487.2 513 L568.4 598.5" stroke="black" stroke-width="8"/>
+  <path d="M568.4 598.5 L649.6 658.35" stroke="black" stroke-width="8"/>
+  <path d="M649.6 658.35 L730.8 684" stroke="black" stroke-width="8"/>
+  <path d="M730.8 684 L812 684" stroke="black" stroke-width="8"/>
+  <path d="M893.2 684 L974.4 658.35" stroke="black" stroke-width="8"/>
+  <path d="M974.4 658.35 L1055.6 598.5" stroke="black" stroke-width="8"/>
+  <path d="M1055.6 598.5 L1136.8 513" stroke="black" stroke-width="8"/>
+  <path d="M1136.8 513 L1218 427.5" stroke="black" stroke-width="8"/>
+  <path d="M893.2 684 L812 684" stroke="black" stroke-width="8"/>
+</svg>
