@@ -1,0 +1,106 @@
+:root { /* Colors and fonts from ChatGPT */
+  /* Backgrounds */
+  --bg: #f8f9fa;
+  --bg-alt: #ffffff;
+  --text: #343a40;
+  --muted: #6c757d;
+
+  /* Data viz colors */
+  --c1: #1f77b4;  /* Blue */
+  --c2: #ff7f0e;  /* Orange */
+  --c3: #2ca02c;  /* Green */
+  --c4: #d62728;  /* Red */
+  --c5: #bcbd22;  /* Yellow */
+  --c6: #9467bd;  /* Purple */
+  --c7: #17becf;  /* Teal */
+
+  /* Accents */
+  --accent-1: #00bfae;  /* Turquoise */
+  --accent-2: #ff6f61;  /* Coral */
+  --accent-3: #b5e61d;  /* Lime */
+
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+}
+
+*, html {
+    margin:0;
+    padding:0;  
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+h1 {
+    font-family: var(--font-heading);
+}
+
+p label {
+    font-family: var(--font-body);
+}
+
+#top-line{
+    
+    text-align: center;
+    padding: 10px;
+}
+
+.point-card{
+    width: 20%;
+    height: auto;
+    background-color: var(--bg-alt);
+    border: 5px solid var(--muted);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.point-card:hover{
+    border: 5px dashed var(--muted);
+    cursor:crosshair;
+}
+
+.line-card{
+    width: 20%;
+    height: auto;
+    background-color: var(--muted);
+    color: var(--bg);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.line-card:hover{
+    cursor:crosshair;
+    border: 5px dashed var(--muted) inset;
+}
+
+#list-area{
+    padding: 4%;
+    gap:4%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.border{
+    background-color: var(--muted);
+    height: 10px;
+    width: 100%;
+}
+
+#point-form-area{
+    display: flex;
+    justify-content: center;
+}
+
+#line-form-area{
+    display: flex;
+    justify-content: center;
+}

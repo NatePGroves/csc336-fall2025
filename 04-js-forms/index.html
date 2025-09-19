@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>Line Art</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="top-line">
+        <h1>Welcome to the line art maker!</h1>
+    </div>
+    <div class="border"></div>
+    <div id="point-form-area">
+    <form id="point-form">
+        <label for="label-field">Label:</label>
+        <input id = "label-field" type="text" maxlength="15" minlength="1" required>
+
+        <label for="x-pos-field">X Position in % of Screen:</label>
+        <input id="x-pos-field" type="number" min="1" max="100" required></input>
+
+        <label for="y-pos-field">Y Position in % of Screen (may have to scroll):</label>
+        <input id="y-pos-field" type="number" min="1" max="100" required></input>
+
+        <label for="radius-field">Radius in pixels</label>
+        <input id="radius-field" type="number" min="10" max="1000" required></input>
+
+        <label for="color">Color:</label>
+        <input id="color" type="color"></input>
+
+        <button type="submit" id = "add-point">Add Point</button>
+    </form>
+    </div>
+    <br>
+    <div class="border"></div>
+    <br>
+    <div id = "line-form-area">
+    <form id="line-form">
+        <label for="label-field">Label:</label>
+        <input id = "label-field" type="text" maxlength="15" minlength="1" required>
+    </form>
+    </div>
+    <br> 
+    <div class = "border"></div>
+    <p style="text-align: center;">Click on a card to delete that point or line.</p>
+    <div id="list-area"> 
+        <div class="point-card">
+            <p>Label: Example</p>
+            <p>X: 50, Y: 50</p>
+            <p>Color: Red</p>
+            <p>Radius: 2</p>
+        </div>
+    </div>
+    <br>
+    <div class="border"></div>
+    <div id="graph-area">
+        <svg id = "graph" width="100%" height="100%">
+            <circle id="#example" cx="50%" cy="50%" r="10" fill="red" />
+        </svg>
+    </div>
+
+
+</body>
+
+</html>
