@@ -238,5 +238,5 @@ let lineForm = document.querySelector(".line-form");
 lineForm.addEventListener("submit", addLine)
 lineForm.addEventListener("reset", deleteAllLines)
 
-// This function call draws the initial array of animals.
+
 populateListAndPlot();

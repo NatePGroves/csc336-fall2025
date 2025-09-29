@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Parker's Pizza Place</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../js-libraries/d3/d3.v7.js"></script>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+</head>
+
+<body>
+    <div id="header">
+        <h1>
+            Parker's Pizza Place
+        </h1>
+    </div>
+    <div id="body">
+        <p id="changing-text" onmouseover="changeText()" onmouseout="restoreText()">Step into Parker’s Pizza Place, where the oven’s always hot 
+            and the vibe is even hotter. This local favorite is all about bold flavors, good times, and pizza done right. From the moment you walk in, 
+            the aroma hits you—and so does the energy. Whether you're grabbing a quick bite or settling in with friends, 
+            Parker’s delivers a crave-worthy experience that keeps people coming back for more. It’s not just pizza—it’s Parker’s.
+            <!-- Thanks ChatGPT for the weird paragraph -->
+        </p>
+        <div id="pizza-maker">
+            <br>
+            <p>Make your own pizza below!</p>
+            <br>
+            <button onclick="resetPizza()">Reset</button>
+            <svg id="pizza-board">
+                <circle id="pizza-base" cx=375 cy=250 r=200></circle>
+                <circle id="pizza-cheese" cx=375 cy=250 r=180></circle>
+            </svg>
+        </div>
+        <p>Here is a picture of the store:</p>
+        <img src = "shop.png">
+
+    </div>
+</body>
+
+</html>
+
