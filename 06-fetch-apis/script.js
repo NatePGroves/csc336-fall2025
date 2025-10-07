@@ -113,3 +113,4 @@ function deleteCard(name){
     cards = cards.filter(card => card.name !== name);
     reloadCards()
 }
+
