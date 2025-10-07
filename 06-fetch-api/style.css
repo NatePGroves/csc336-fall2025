@@ -1,0 +1,82 @@
+:root {
+  --background: #5B9DC2;
+  --text: #171212;
+  --shadows: #3B1BDA;
+  --aqua: #23F0C7;
+  --thistle: #E7C8DD;
+
+  /* Pokemon */
+  --p-yellow: #FFDE00;
+  --p-blue: #3B4CCA;
+  --p-red: #FF0000;
+}
+
+body{
+    background-color: var(--background);
+    font-family: "Copperplate", "Copperplate Gothic Light", "fantasy";
+}
+
+#heading{
+    background-color: var(--aqua);
+    width:fit-content;
+    padding: 20px;
+    box-shadow: 0 0 100px var(--aqua);
+    border-radius: 50px;
+    color: var(--shadows);
+}
+
+#center-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#search-form{
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+button{
+    border: 3px solid var(--thistle);
+    background-color: var(--text);
+    color: var(--thistle);
+}
+
+button:active{
+    border: 3px solid var(--text);
+    background-color: var(--thistle);
+    color: var(--text);
+}
+
+#card-div{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card{
+    background-color: var(--p-yellow);
+    border: 10px solid var(--p-red);
+    color: var(--p-blue);
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: fit-content;
+    align-items: center;
+    align-content: center;
+}
+
+
+.digimon{
+    background-color: var(--p-red);
+    border: 10px solid var(--p-yellow);
+    color: var(--p-blue);
+}
+
+.card img{
+    width: 200px;
+    height: auto;
+}
+
