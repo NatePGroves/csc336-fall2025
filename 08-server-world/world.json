@@ -1,0 +1,544 @@
+{
+  "regions": [
+    {
+      "name": "desert",
+      "climate": "arid",
+      "towns": [
+        {
+          "name": "lavender_allies",
+          "population": 3879000,
+          "notable_people": [
+            {
+              "name": "karter_bast",
+              "role": "mayor",
+              "items": [
+                {
+                  "name": "walk_of_fame_shurikens",
+                  "power_level_out_of_ten": 7,
+                  "use": "medium_range_weapon",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "griffith_satellite_station",
+                  "power_level_out_of_ten": 10,
+                  "use": "weapon_of_mass_destruction",
+                  "rarity": "legendary"
+                }
+              ]
+            },
+            {
+              "name": "joshua_porter_gary",
+              "role": "conniving_corporate_overlord",
+              "items": [
+                {
+                  "name": "gary_center",
+                  "power_level_out_of_ten": 9,
+                  "use": "propaganda_machine",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "gary_museum_arts",
+                  "power_level_out_of_ten": 1,
+                  "use": "art_collection",
+                  "rarity": "rare"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ridgelandia",
+          "population": 281537,
+          "notable_people": [
+            {
+              "name": "holly_sarah",
+              "role": "mayor",
+              "items": [
+                {
+                  "name": "ridge_guitar",
+                  "power_level_out_of_ten": 8,
+                  "use": "sonic_weapon",
+                  "rarity": "rare"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "lavender_villains",
+          "population": 687212,
+          "notable_people": [
+            {
+              "name": "shelton_burke",
+              "role": "mayor",
+              "items": [
+                {
+                  "name": "exploding_blackjack_deck",
+                  "power_level_out_of_ten": 7,
+                  "use": "medium_range_weapon",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "buster_signal",
+              "role": "mob_boss",
+              "items": [
+                {
+                  "name": "colt_detective_.38_special",
+                  "power_level_out_of_ten": 5,
+                  "use": "medium_range_weapon",
+                  "rarity": "uncommon"
+                }
+              ]
+            },
+            {
+              "name": "franklin_sin",
+              "role": "singer",
+              "items": [
+                {
+                  "name": "rocketship",
+                  "power_level_out_of_ten": 8,
+                  "use": "transportation",
+                  "rarity": "rare"
+                },
+                {
+                  "name": "lady_luck's_cards",
+                  "power_level_out_of_ten": 4,
+                  "use": "deck_of_cards",
+                  "rarity": "uncommon"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "swamp",
+      "climate": "gross",
+      "towns": [
+        {
+          "name": "flower_dah",
+          "population": 23000000,
+          "notable_people": [
+            {
+              "name": "ronald_destupid",
+              "role": "governor",
+              "items": [
+                {
+                  "name": "twitter_spaces_launch",
+                  "power_level_out_of_ten": 1,
+                  "use": "propaganda_machine",
+                  "rarity": "common"
+                }
+              ]
+            },
+            {
+              "name": "man_o_flower_dah",
+              "role": "urban_legend",
+              "items": [
+                {
+                  "name": "opossum",
+                  "power_level_out_of_ten": 5,
+                  "use": "weapon",
+                  "rarity": "common"
+                },
+                {
+                  "name": "alligator",
+                  "power_level_out_of_ten": 8,
+                  "use": "weapon",
+                  "rarity": "common"
+                },
+                {
+                  "name": "thermos",
+                  "power_level_out_of_ten": 4,
+                  "use": "weapon",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "lake_of_ozars",
+          "population": 92551,
+          "notable_people": [
+            {
+              "name": "martin_bird",
+              "role": "kingpin",
+              "items": [
+                {
+                  "name": "ruger_mini-14_rifle",
+                  "power_level_out_of_ten": 4,
+                  "use": "medium_range_weapon",
+                  "rarity": "common"
+                },
+                {
+                  "name": "missouri_belle",
+                  "power_level_out_of_ten": 8,
+                  "use": "money_laundering_location",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "winnie_bird",
+              "role": "queenpin",
+              "items": [
+                {
+                  "name": "missouri_belle",
+                  "power_level_out_of_ten": 8,
+                  "use": "money_laundering_location",
+                  "rarity": "rare"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "deep_sea",
+      "climate": "underwater",
+      "towns": [
+        {
+          "name": "mary's_paradise",
+          "population": 10935,
+          "notable_people": [
+            {
+              "name": "bruce",
+              "role": "dictator",
+              "items": [
+                {
+                  "name": "shark_tooth",
+                  "power_level_out_of_ten": 9,
+                  "use": "short_range_weapon",
+                  "rarity": "rare"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mary's_shelf",
+          "population": 35876,
+          "notable_people": [
+            {
+              "name": "marlin",
+              "role": "leader_of_the_resistance",
+              "items": [
+                {
+                  "name": "egg_command",
+                  "power_level_out_of_ten": 10,
+                  "use": "enables_user_to_command_resistance",
+                  "rarity": "legendary"
+                }
+              ]
+            },
+            {
+              "name": "nemo",
+              "role": "general_of_the_resistance",
+              "items": [
+                {
+                  "name": "lucky_fin",
+                  "power_level_out_of_ten": 8,
+                  "use": "increases_strategical_ability_of_the_user",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "crush",
+              "role": "treasurer_of_the_resistance",
+              "items": [
+                {
+                  "name": "turtle_shell",
+                  "power_level_out_of_ten": 7,
+                  "use": "armor",
+                  "rarity": "uncommon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "chester_peake's_bay",
+          "population": 174,
+          "notable_people": [
+            {
+              "name": "chester_peake",
+              "role": "cult_leader",
+              "items": [
+                {
+                  "name": "terrapin_staff",
+                  "power_level_out_of_ten": 9,
+                  "use": "summons_the_power_of_the_bay",
+                  "rarity": "legendary"
+                },
+                {
+                  "name": "blue_crab_claws",
+                  "power_level_out_of_ten": 8,
+                  "use": "short_range_weapon",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "alewife",
+              "role": "second_in_command",
+              "items": [
+                {
+                  "name": "magic_wand",
+                  "power_level_out_of_ten": 7,
+                  "use": "magic",
+                  "rarity": "uncommon"
+                }
+              ]
+            },
+            {
+              "name": "cobia",
+              "role": "third_in_command",
+              "items": [
+                {
+                  "name": "spears",
+                  "power_level_out_of_ten": 6,
+                  "use": "short_range_weapon",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "sky_world",
+      "climate": "frigid",
+      "towns": [
+        {
+          "name": "Cirrus",
+          "population": 24,
+          "notable_people": [
+            {
+              "name": "fibrous",
+              "role": "cloud_nymph",
+              "items": [
+                {
+                  "name": "cloud_burst",
+                  "power_level_out_of_ten": 3,
+                  "use": "fleeing_device",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cirrocumulus",
+          "population": 28,
+          "notable_people": [
+            {
+              "name": "rippler",
+              "role": "cloud_nymph",
+              "items": [
+                {
+                  "name": "cloud_burst",
+                  "power_level_out_of_ten": 3,
+                  "use": "fleeing_device",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cirrostratus",
+          "population": 14,
+          "notable_people": [
+            {
+              "name": "milkster",
+              "role": "cloud_nymph",
+              "items": [
+                {
+                  "name": "cloud_burst",
+                  "power_level_out_of_ten": 3,
+                  "use": "fleeing_device",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Altocumulus",
+          "population": 50,
+          "notable_people": [
+            {
+              "name": "laminae",
+              "role": "cloud_nymph",
+              "items": [
+                {
+                  "name": "cloud_burst",
+                  "power_level_out_of_ten": 3,
+                  "use": "fleeing_device",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Altostratus",
+          "population": 64,
+          "notable_people": [
+            {
+              "name": "virga",
+              "role": "rain_nymph_leader",
+              "items": [
+                {
+                  "name": "water",
+                  "power_level_out_of_ten": 7,
+                  "use": "ranged_weapon",
+                  "rarity": "uncommon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Nimbostratus",
+          "population": 42,
+          "notable_people": [
+            {
+              "name": "blot",
+              "role": "fog_nymph_leader",
+              "items": [
+                {
+                  "name": "foggy_cloud_burst",
+                  "power_level_out_of_ten": 5,
+                  "use": "cloaking_device",
+                  "rarity": "uncommon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cumulus",
+          "population": 610,
+          "notable_people": [
+            {
+              "name": "cauliflower",
+              "role": "cloud_nymph_leader",
+              "items": [
+                {
+                  "name": "cloud_burst",
+                  "power_level_out_of_ten": 3,
+                  "use": "fleeing_device",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cumulonimbus",
+          "population": 20000,
+          "notable_people": [
+            {
+              "name": "thunder",
+              "role": "rain_nymph_warrior",
+              "items": [
+                {
+                  "name": "thunderbolts",
+                  "power_level_out_of_ten": 9,
+                  "use": "medium_range_weapon",
+                  "rarity": "legendary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Stratocumulus",
+          "population": 512000,
+          "notable_people": [
+            {
+              "name": "wmo",
+              "role": "cloud_nymph_congress",
+              "items": [
+                {
+                  "name": "cloud_burst",
+                  "power_level_out_of_ten": 3,
+                  "use": "fleeing_device",
+                  "rarity": "common"
+                },
+                {
+                  "name": "voting_button",
+                  "power_level_out_of_ten": 1,
+                  "use": "voting",
+                  "rarity": "common"
+                }
+              ]
+            },
+            {
+              "name": "noaa",
+              "role": "cloud_nymph_president",
+              "items": [
+                {
+                  "name": "cloud_burst",
+                  "power_level_out_of_ten": 3,
+                  "use": "fleeing_device",
+                  "rarity": "common"
+                },
+                {
+                  "name": "hurricane_launch_codes",
+                  "power_level_out_of_ten": 10,
+                  "use": "weapons_of_mass_destruction",
+                  "rarity": "legendary"
+                }
+              ]
+            },
+            {
+              "name": "tessellation",
+              "role": "rain_nymph_representative",
+              "items": [
+                {
+                  "name": "cloud_burst",
+                  "power_level_out_of_ten": 3,
+                  "use": "fleeing_device",
+                  "rarity": "common"
+                },
+                {
+                  "name": "water",
+                  "power_level_out_of_ten": 7,
+                  "use": "ranged_weapon",
+                  "rarity": "uncommon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Stratus",
+          "population": 130000,
+          "notable_people": [
+            {
+              "name": "halo",
+              "role": "cloud_nymph",
+              "items": [
+                {
+                  "name": "cloud_burst",
+                  "power_level_out_of_ten": 3,
+                  "use": "fleeing_device",
+                  "rarity": "common"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
