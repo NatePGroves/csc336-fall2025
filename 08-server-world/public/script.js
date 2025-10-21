@@ -8,7 +8,7 @@ formStrings = [`
                 <button type = "submit">Add Region</button>
                 `
 
-,`
+    , `
                 <label for="name">Name:</label>
                 <input type="text" name="name" required>
 
@@ -18,7 +18,7 @@ formStrings = [`
                 <button type = "submit">Add Town</button>
                 `
 
-,`
+    , `
                 <label for="name">Name:</label>
                 <input type="text" name="name" required>
 
@@ -28,7 +28,7 @@ formStrings = [`
                 <button type = "submit">Add Notable Person</button>
                 `
 
-,`
+    , `
                 <label for="name">Name:</label>
                 <input type="text" name="name" required>
 
@@ -86,10 +86,10 @@ function showSummaries(aoi) {
         let doi = document.querySelector(`div#${makeSafeId(i.name)}`);
         doi.innerHTML = "";
         for (const [key, value] of Object.entries(i)) {  //learned how to iterate arrays
-            if (key == "name"){
+            if (key == "name") {
                 continue;
             }
-            if (Array.isArray(value)){ //checking if its an array
+            if (Array.isArray(value)) { //checking if its an array
                 doi.innerHTML += `<p><strong>Number of ${formatString(key)}:</strong> ${value.length}</p>`;
                 continue;
             }
@@ -105,7 +105,7 @@ function resetGetForm() {
     const worldInfo = window.worldData
     const regions = worldInfo.regions;
     const getForm = document.querySelector("#getForm");
-    getForm.innerHTML = "<p> Select a region to learn more</p>";
+    getForm.innerHTML = "<p> Select a region to learn more or add a new region below!</p>";
     for (r of regions) {
         getForm.innerHTML += `<input type="radio" id="${r.name}" name="type" value="${r.name}" required> 
                                 <label for=${r.name}>${formatString(r.name)}</label>
@@ -123,15 +123,19 @@ function resetGetForm() {
 }
 
 function lowerLevelGetForm(aoi) {
-    window.currentSearchLevel += 1;
-    postForm.innerHTML = formStrings[window.currentSearchLevel];
 
+    window.currentSearchLevel += 1;
     const getForm = document.getElementById("getForm");
-    getForm.innerHTML = `<p> Select a ${levels[window.currentSearchLevel]} to learn more</p>`;
-    for (i of aoi) {
-        getForm.innerHTML += `<input type="radio" id="${makeSafeId(i.name)}" name="type" value="${makeSafeId(i.name)}" required>
+    postForm.innerHTML = formStrings[window.currentSearchLevel];
+    if (aoi.length == 0) {
+        getForm.innerHTML = `There are currently not any ${levels[window.currentSearchLevel]}s. Add one below! <br><br>`
+    } else {
+        getForm.innerHTML = `<p> Select a ${levels[window.currentSearchLevel]} to learn more or add a new ${levels[window.currentSearchLevel]} below!</p>`;
+        for (i of aoi) {
+            getForm.innerHTML += `<input type="radio" id="${makeSafeId(i.name)}" name="type" value="${makeSafeId(i.name)}" required>
                                 <label for=${makeSafeId(i.name)}>${formatString(i.name)}</label>
                                 <div id = ${makeSafeId(i.name)}></div> <br>`
+        }
     }
     getForm.innerHTML += `<button type="submit">Submit</button>`
     getForm.innerHTML += `<button type="reset">Back To Beginning</button>`
@@ -185,7 +189,7 @@ function searchForArray(valueOfInterest, region = null, town = null, person = nu
 
 // This function will run when the script is loaded
 (async () => {
-    window.worldData = await loadWorld();
+    await loadWorld();
     resetGetForm();
 })();
 
@@ -210,18 +214,23 @@ postForm.addEventListener("submit", async (e) => {
     // where the keys are the "name" field of each input, and the values are the 
     // value of each input (e.g. the text written into a text input).
     let formData = new FormData(postForm);
-    let formDataInObjectForm = Object.fromEntries(formData.entries());
+    let body_object = Object.fromEntries(formData.entries());
+    body_object.region = currentROI;
+    body_object.town = currentTOI;
+    body_object.person = currentPOI;
+
 
     // Tell the server to add excitement to a 
-    const res = await fetch(`/add${window.levels[window.currentSearchLevel]}`, {
+
+    const res = await fetch(`/add${levels[window.currentSearchLevel]}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formDataInObjectForm)
+        body: JSON.stringify(body_object)
     });
 
-    const updatedWorld = await res.json();
-    // document.getElementById("worldDiv").innerHTML =
-    //     `<ul><li>${updatedWorld.regions[0].towns[0].notable_people[0].name}</li></ul>`;
+    await loadWorld();
+    resetGetForm();
+
 });
 
 
