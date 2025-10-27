@@ -19,17 +19,114 @@ app.get("/world", async (req, res) => {
     res.json(dataObject);
 });
 
+app.post("/update", async (req, res) => {
+    // Read the file that contains all of the world info
+    const worldData = await fs.readFileSync("./world.json", "utf-8");
+    // As readFile brought in the data as a string, parse it into a JS object.
+    let newData = req.body;
+    if (newData.region == null) {
+        delete newData.region;
+        delete newData.town;
+        delete newData.person;
+        newData.towns = [];
+        console.log('region_update');
+
+        const world = JSON.parse(worldData);
+        world.regions.push(newData)
+
+
+        // Write it back to file
+        await fs.writeFileSync("./world.json", JSON.stringify(world, null, 2));
+
+        // Now that we've modified the world data, and written it back to file
+        // send it back to the client.
+        res.json(world);
+    } else if (newData.town == null) {
+        delete newData.town;
+        delete newData.person;
+        newData.notable_people = []
+
+        const world = JSON.parse(worldData);
+        for (let r of world.regions) {
+            if (r.name == newData.region) {
+                delete newData.region
+                r.towns.push(newData)
+            }
+        }
+        console.log('town_update');
+
+        // Write it back to file
+        await fs.writeFileSync("world.json", JSON.stringify(world, null, 2));
+
+        // Now that we've modified the world data, and written it back to file
+        // send it back to the client.
+        res.json(world);
+    } else if (newData.person == null) {
+        newData.items = [];
+        console.log('person_update');
+        delete newData.person;
+        const world = JSON.parse(worldData);
+        for (let r of world.regions) {
+            if (r.name == newData.region) {
+                delete newData.region
+                for (let t of r.towns) {
+                    if (t.name == newData.town) {
+                        t.notable_people.push(newData)
+                    }
+                }
+            }
+        }
+
+
+        // Write it back to file
+        await fs.writeFileSync("world.json", JSON.stringify(world, null, 2));
+
+        // Now that we've modified the world data, and written it back to file
+        // send it back to the client.
+        res.json(world);
+    } else {
+        console.log("item update")
+        const world = JSON.parse(worldData);
+        for (let r of world.regions) {
+            if (r.name == newData.region) {
+                delete newData.region
+                for (let t of r.towns) {
+                    if (t.name == newData.town) {
+                        delete newData.town
+                        for (let p of t.notable_people) {
+                            if (p.name == newData.person) {
+                                delete newData.person
+                                p.items.push(newData)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        // Write it back to file
+        await fs.writeFileSync("world.json", JSON.stringify(world, null, 2));
+
+        // Now that we've modified the world data, and written it back to file
+        // send it back to the client.
+        res.json(world);
+
+    }
+})
+
+
 app.post("/addregion", async (req, res) => {
     // Read the file that contains all of the world info
     const worldData = await fs.readFileSync("./world.json", "utf-8");
     // As readFile brought in the data as a string, parse it into a JS object.
-    let newData =  req.body;
+    let newData = req.body;
     delete newData.region;
     delete newData.town;
     delete newData.person;
     newData.towns = [];
     console.log('region_update');
-    
+
     const world = JSON.parse(worldData);
     world.regions.push(newData)
 
@@ -47,14 +144,14 @@ app.post("/addtown", async (req, res) => {
     const worldData = await fs.readFileSync("./world.json", "utf-8");
     // As readFile brought in the data as a string, parse it into a JS object.
 
-    let newData =  req.body;
+    let newData = req.body;
     delete newData.town;
     delete newData.person;
     newData.notable_people = []
-    
+
     const world = JSON.parse(worldData);
-    for(let r of world.regions){
-        if (r.name == newData.region){
+    for (let r of world.regions) {
+        if (r.name == newData.region) {
             delete newData.region
             r.towns.push(newData)
         }
@@ -74,17 +171,17 @@ app.post("/additem", async (req, res) => {
     const worldData = await fs.readFileSync("./world.json", "utf-8");
     // As readFile brought in the data as a string, parse it into a JS object.
     console.log('item_update');
-    let newData =  req.body;
-    
+    let newData = req.body;
+
     const world = JSON.parse(worldData);
-    for(let r of world.regions){
-        if (r.name == newData.region){
+    for (let r of world.regions) {
+        if (r.name == newData.region) {
             delete newData.region
-            for(let t of r.towns){
-                if (t.name == newData.town){
+            for (let t of r.towns) {
+                if (t.name == newData.town) {
                     delete newData.town
-                    for(let p of t.notable_people){
-                        if (p.name == newData.person){
+                    for (let p of t.notable_people) {
+                        if (p.name == newData.person) {
                             delete newData.person
                             p.items.push(newData)
                         }
@@ -107,16 +204,16 @@ app.post("/addperson", async (req, res) => {
     // Read the file that contains all of the world info
     const worldData = await fs.readFileSync("./world.json", "utf-8");
     // As readFile brought in the data as a string, parse it into a JS object.
-    let newData =  req.body;
+    let newData = req.body;
     newData.items = [];
     console.log('person_update');
     delete newData.person;
     const world = JSON.parse(worldData);
-    for(let r of world.regions){
-        if (r.name == newData.region){
+    for (let r of world.regions) {
+        if (r.name == newData.region) {
             delete newData.region
-            for(let t of r.towns){
-                if (t.name == newData.town){
+            for (let t of r.towns) {
+                if (t.name == newData.town) {
                     t.notable_people.push(newData)
                 }
             }

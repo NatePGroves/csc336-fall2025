@@ -222,7 +222,7 @@ postForm.addEventListener("submit", async (e) => {
 
     // Tell the server to add excitement to a 
 
-    const res = await fetch(`/add${levels[window.currentSearchLevel]}`, {
+    const res = await fetch(`/update`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body_object)
