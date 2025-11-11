@@ -13,7 +13,7 @@ app.use(express.static("./public"));
 // This line helps us process requests that contain json (e.g. in the '/excite' 
 // route req.data is automatically json because of this)
 app.use(express.json());
-app.use(cors.json());
+app.use(cors());
 
 app.get("/world", async (req, res) => {
     // Read in the data, parse it into an object and send it over as json to the client

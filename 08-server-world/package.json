@@ -1,6 +1,9 @@
 {
   "type": "module",
   "dependencies": {
-    "express": "^5.1.0"
+    "@google/genai": "^1.27.0",
+    "csv-parse": "^6.1.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0"
   }
 }
