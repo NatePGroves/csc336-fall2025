@@ -6,9 +6,9 @@ function RandomImage() {
   const [imageID, setImageID] = useState(null);   // random ID stored here
   const [imageInfo, setImageInfo] = useState(null);
 
-  // Whenever imageID changes, fetch JSON metadata
+  
   useEffect(() => {
-    if (imageID === null) return;  // ignore initial render
+    if (imageID === null) return;  
 
     fetch(`https://picsum.photos/id/${imageID}/info`)
       .then(res => {
@@ -23,8 +23,7 @@ function RandomImage() {
       });
   }, [imageID]);
 
-  // When user clicks submit:
-  // Generate random ID (0-1084) + trigger useEffect
+  
   const handleSubmit = () => {
     const randomID = Math.floor(Math.random() * 1085);
     setImageID(randomID);
@@ -56,7 +55,7 @@ function RandomImage() {
 
       <button onClick={handleSubmit}>Get Random Image</button>
 
-      <div style={{ marginTop: "20px" }}>
+      <div>
         {imageInfo ? (
           <>
             <h3>Image by {imageInfo.author}</h3>
