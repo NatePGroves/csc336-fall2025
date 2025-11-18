@@ -31,7 +31,7 @@ function RandomImage() {
 
   return (
     <div>
-      <h2>Random Picsum Image</h2>
+      <h1>Random Image</h1>
 
       <label>
         Width:
@@ -41,7 +41,6 @@ function RandomImage() {
           onChange={(e) => setWidth(e.target.value)}
         />
       </label>
-      <br />
 
       <label>
         Height:
@@ -51,20 +50,16 @@ function RandomImage() {
           onChange={(e) => setHeight(e.target.value)}
         />
       </label>
-      <br />
 
       <button onClick={handleSubmit}>Get Random Image</button>
 
       <div>
         {imageInfo ? (
           <>
-            <h3>Image by {imageInfo.author}</h3>
-
+            <h1>Image by {imageInfo.author}</h1>
             <img
               src={`https://picsum.photos/id/${imageID}/${width}/${height}`}
-              alt="random picsum"
             />
-
             <p>Random ID: {imageID}</p>
             <p>Original Width: {imageInfo.width}</p>
             <p>Original Height: {imageInfo.height}</p>
