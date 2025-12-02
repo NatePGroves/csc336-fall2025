@@ -1,0 +1,201 @@
+/* -------- chatGPT got me started on this because I absolutely could not pick colors -------- */
+
+/* -------- GLOBAL RESET -------- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #f8f9fa;
+  color: #1a1a1a;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+/* Smooth section spacing */
+section {
+  padding: 80px 0;
+}
+
+/* Layout container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.page-body {
+  padding-top: 70px;
+}
+/* ---------- NAVBAR ----------- */
+nav {
+  position: fixed;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 10;
+}
+
+nav .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+nav a {
+  color: #1a1a1a;
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  color: #0077ff;
+}
+
+
+.btn-primary {
+  padding: 12px 26px;
+  background: #0077ff;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: #005fcc;
+}
+
+/* ---------- HOME PAGE ----------- */
+#lookie-here {
+  margin: 0;
+  padding: 0;
+  width: 99vw;
+  height: 100vh;
+  background-image: url('../images/nate_img.jpg');
+  background-size: cover;        /* fills entire background */
+  background-position: center;   /* centers image */
+  background-repeat: no-repeat;  /* avoids tiling */
+}
+
+#made-a-site{
+  position: absolute;
+  top: 35vh;
+  left: 15vw;
+}
+
+a{
+  color: inherit; 
+  text-decoration: none;
+}
+#introduction{
+  padding: 20vw;
+}
+
+/* ---------- ABOUT SECTION ----------- */
+#about .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+#about img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+#about p {
+  font-size: 1.05rem;
+  color: #333;
+}
+
+/* ---------- PROJECTS PAGE ----------- */
+#project-form {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.projects-grid {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background: white;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 30%;
+  justify-items: center;
+
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 26px rgba(0, 0, 0, 0.5);
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: #0077ff;
+}
+
+.project-card p {
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.project-image {
+  width: 100%;
+}
+
+/* ---------- SKILLS TAGS ----------- */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* TODO: .skill-tag {
+  padding: 6px 14px;
+  background: #e6f0ff;
+  color: #005fcc;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+} */
+
+
+/* ---------- RESUME ----------- */
+
+
+.centering_div{
+  display: flex;
+  margin-top: 70px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+embed {
+  height: 1000px;
+  width: 1000px;
+}
