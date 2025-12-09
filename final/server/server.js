@@ -30,11 +30,6 @@ app.post("/api/add", async (req, res) => {
   res.json(project_list);
 })
 
-
-
-
-
-app.use(express.static("./client"));
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
 });
