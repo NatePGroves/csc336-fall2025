@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm --prefix client install && npx vite build --prefix client && npm --prefix server install",
+    "build": "cd client && npm install && npm run build && cd ../server && npm install",
     "start": "node server/server.js"
   },
   "engines": {
