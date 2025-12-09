@@ -1,6 +1,7 @@
 {
   "name": "portfolio-fullstack",
   "version": "1.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "build": "npm --prefix client install && npm --prefix client run build && npm --prefix server install",
@@ -8,4 +9,5 @@
   },
   "engines": {
     "node": "20.x"
+  }
 }
