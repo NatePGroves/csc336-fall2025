@@ -16,7 +16,7 @@ export default function Projects() {
     async function loadProjects() {
       try {
 
-        const res = await fetch("http://localhost:3000/api/projects");
+        const res = await fetch("api/projects");
         const data = await res.json();
 
         const projects_to_display = data.projects.map(p => ({
@@ -58,7 +58,7 @@ export default function Projects() {
 
     try {
       
-      const res = await fetch("http://localhost:3000/api/add", {
+      const res = await fetch("/api/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newProject),
