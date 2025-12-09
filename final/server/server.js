@@ -11,7 +11,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// --- API routes ---
 app.get("/api/projects", (req, res) => {
   try {
     const data = fs.readFileSync(path.join(__dirname, "api/projects.json"), "utf-8");
@@ -32,14 +31,10 @@ app.post("/api/add", (req, res) => {
     res.status(500).json({ error: "Failed to write projects data" });
   }
 });
-
+console.log(__dirname)
 // --- Serve React static files ---
 app.use(express.static(path.join(__dirname, "public")));
 
-// --- Catch-all route for React Router ---
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
 
 // --- Start server ---
 const PORT = 2000;
