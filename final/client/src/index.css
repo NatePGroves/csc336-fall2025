@@ -199,3 +199,40 @@ embed {
   height: 1000px;
   width: 1000px;
 }
+
+/* ---------- CONTACT ----------- */
+#contact-body{
+  padding-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact{
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5vh;
+}
+
+#contact-form {
+  display: flex;
+  gap: 30px;
+
+}
+
+.contact-img {
+  width: 30vw;
+  height: auto;
+}
+
+.contact-images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20vw;
+}
+
+.no-gap{
+  gap: 0vh;
+}

@@ -14,48 +14,77 @@ export default function Projects() {
 
   useEffect(() => {
     async function loadProjects() {
-      const res = await fetch("/projects.json");
-      const data = await res.json();
+      try {
 
-      const projects_to_display = data.projects.map(p => ({
-        name: p.name,
-        imageLink: p.imageLink,
-        skillTags: p.skillTags,
-        projectLink: p.projectLink,
-        description: p.description,
-        id: nextID++
-      }));
+        const res = await fetch("http://localhost:3000/api/projects");
+        const data = await res.json();
 
-      setProjects(projects_to_display);
+        const projects_to_display = data.projects.map(p => ({
+          name: p.name,
+          imageLink: p.imageLink,
+          skillTags: p.skillTags,
+          projectLink: p.projectLink,
+          description: p.description,
+          id: nextID++
+        }));
+
+        setProjects(projects_to_display);
+      } catch (error) {
+        alert("Error loading projects!");
+      }
     }
 
     loadProjects();
+
+
+
   }, []);
 
 
-  function addProject() {
+  async function addProject(e) {
+    e.preventDefault();
+    if (!projectName || !skillTags || !description) {
+      alert("Please fill out all required fields!");
+      return;
+    }
+
     const newProject = {
       name: projectName,
       imageLink: imageLink,
       skillTags: skillTags.split(",").map((s) => s.trim()),
       projectLink: projectLink,
       description: description,
-      id: nextID++,
     };
 
-    setProjects((prev) => [...prev, newProject]);
+    try {
+      
+      const res = await fetch("http://localhost:3000/api/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newProject),
+      });
 
-    setProjectName("");
-    setImageLink("");
-    setSkillTags("");
-    setProjectLink("");
-    setDescription("");
+      if (!res.ok) throw new Error("Failed to save project");
+
+      const updatedProjects = await res.json();
+
+      setProjects(updatedProjects.projects.map((p) => ({ ...p, id: nextID++ })));
+
+      setProjectName("");
+      setImageLink("");
+      setSkillTags("");
+      setProjectLink("");
+      setDescription("");
+    } catch (error) {
+      alert("Error adding project: " + error.message);
+      console.error(error);
+    }
   }
 
   return (
 
     <div className="page-body">
-      <form id  = "project-form">
+      <form id="project-form" onSubmit={addProject}>
         <input
           type="text"
           placeholder="Enter project name"
@@ -95,7 +124,7 @@ export default function Projects() {
           required
         />
 
-        <button onClick={addProject}>Add Project</button>
+        <button>Add Project</button>
       </form>
 
       <div className="projects-grid">
